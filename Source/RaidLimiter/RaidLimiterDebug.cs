@@ -6,11 +6,10 @@ namespace RaidLimiter;
 
 [HarmonyPatch(typeof(StorytellerUtility))]
 [HarmonyPatch("DefaultParmsNow")]
-[HarmonyPatch(new[]
-{
+[HarmonyPatch([
     typeof(IncidentCategoryDef),
     typeof(IIncidentTarget)
-})]
+])]
 internal class RaidLimiterDebug
 {
     private static bool Prefix(IncidentCategoryDef incCat, IIncidentTarget target, ref IncidentParms __result)
@@ -37,12 +36,11 @@ internal class RaidLimiterDebug
             {
                 var typeFromHandle = typeof(StorytellerUtility);
                 var method = typeFromHandle.GetMethod("DefaultThreatPointsNow");
-                if (!(method is null))
+                if (method is not null)
                 {
-                    incidentParms.points = (float)method.Invoke(null, new object[]
-                    {
+                    incidentParms.points = (float)method.Invoke(null, [
                         target
-                    });
+                    ]);
                 }
 
                 MyLog.Log("RL.LogPoints.label".Translate(incidentParms.points));

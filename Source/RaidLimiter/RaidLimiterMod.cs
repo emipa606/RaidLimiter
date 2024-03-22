@@ -6,7 +6,7 @@ using Verse;
 namespace RaidLimiter;
 
 [StaticConstructorOnStartup]
-internal class RaidLimiterMod : Mod
+public class RaidLimiterMod : Mod
 {
     /// <summary>
     ///     The instance of the settings to be read by the mod
@@ -27,7 +27,7 @@ internal class RaidLimiterMod : Mod
     public RaidLimiterMod(ModContentPack content) : base(content)
     {
         currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.RaidLimiter"));
+            VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
         instance = this;
     }
 
