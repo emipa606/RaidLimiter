@@ -11,7 +11,7 @@ public class RaidLimiterMod : Mod
     /// <summary>
     ///     The instance of the settings to be read by the mod
     /// </summary>
-    public static RaidLimiterMod instance;
+    public static RaidLimiterMod Instance;
 
     private static string currentVersion;
 
@@ -28,7 +28,7 @@ public class RaidLimiterMod : Mod
     {
         currentVersion =
             VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
-        instance = this;
+        Instance = this;
     }
 
     /// <summary>
@@ -38,10 +38,7 @@ public class RaidLimiterMod : Mod
     {
         get
         {
-            if (settings == null)
-            {
-                settings = GetSettings<RaidLimiterSettings>();
-            }
+            settings ??= GetSettings<RaidLimiterSettings>();
 
             return settings;
         }

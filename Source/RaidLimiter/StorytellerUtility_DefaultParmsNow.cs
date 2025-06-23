@@ -4,13 +4,9 @@ using Verse;
 
 namespace RaidLimiter;
 
-[HarmonyPatch(typeof(StorytellerUtility))]
-[HarmonyPatch("DefaultParmsNow")]
-[HarmonyPatch([
-    typeof(IncidentCategoryDef),
-    typeof(IIncidentTarget)
-])]
-internal class RaidLimiterDebug
+[HarmonyPatch(typeof(StorytellerUtility), nameof(StorytellerUtility.DefaultParmsNow), typeof(IncidentCategoryDef),
+    typeof(IIncidentTarget))]
+internal class StorytellerUtility_DefaultParmsNow
 {
     private static bool Prefix(IncidentCategoryDef incCat, IIncidentTarget target, ref IncidentParms __result)
     {
