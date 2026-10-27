@@ -58,13 +58,13 @@ public class RaidLimiterMod : Mod
     ///     The settings-window
     ///     For more info: https://rimworldwiki.com/wiki/Modding_Tutorials/ModSettings
     /// </summary>
-    /// <param name="rect"></param>
-    public override void DoSettingsWindowContents(Rect rect)
+    /// <param name="inRect"></param>
+    public override void DoSettingsWindowContents(Rect inRect)
     {
         var listing_Standard = new Listing_Standard();
-        listing_Standard.Begin(rect);
+        listing_Standard.Begin(inRect);
         listing_Standard.Gap();
-        listing_Standard.ColumnWidth = (rect.width / 2) - 10f;
+        listing_Standard.ColumnWidth = (inRect.width / 2) - 10f;
         listing_Standard.CheckboxLabeled("RL.CapByDifficultySettings.label".Translate(),
             ref Settings.CapByDifficultySettings,
             "RL.CapByDifficultySettings.description".Translate());

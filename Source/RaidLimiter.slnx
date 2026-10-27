@@ -3,4 +3,16 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="RaidLimiter/RaidLimiter.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/RaidLimiterSettingsDefs/">
+    <File Path="../1.7/Defs/RaidLimiterSettingsDefs/Settings.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/Mod_Settings.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
 </Solution>

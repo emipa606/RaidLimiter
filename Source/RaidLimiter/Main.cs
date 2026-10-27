@@ -5,7 +5,7 @@ using Verse;
 namespace RaidLimiter;
 
 [StaticConstructorOnStartup]
-internal class Main
+internal static class Main
 {
     static Main()
     {

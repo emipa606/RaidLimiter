@@ -8,9 +8,9 @@ using Verse;
 namespace RaidLimiter;
 
 [HarmonyPatch(typeof(StorytellerUtility), nameof(StorytellerUtility.DefaultThreatPointsNow))]
-internal class StorytellerUtility_DefaultThreatPointsNow
+internal static class StorytellerUtility_DefaultThreatPointsNow
 {
-    private static bool Prefix(IIncidentTarget target, ref float __result)
+    public static bool Prefix(IIncidentTarget target, ref float __result)
     {
         var simpleCurve = new SimpleCurve
         {
